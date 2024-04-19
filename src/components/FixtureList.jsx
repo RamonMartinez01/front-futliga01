@@ -8,7 +8,7 @@ const FixtureList = ({ fixtures }) => {
     <div className="fixture-list">
      
       <div className="fixture__card">{
-      fixtures.map((fixture, index) => (
+      fixtures?.map((fixture, index) => (
         <div className="fixture__card-container" key={index}>
           <FixtureDetails fixture={fixture} />
           

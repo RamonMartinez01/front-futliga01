@@ -2,7 +2,7 @@ import './styles/FixtureDetails.css'
 
 const FixtureDetails = ({ fixture }) => {
 
-  function renderizarFecha(fechaStr) {
+ function renderizarFecha(fechaStr) {
     const fecha = new Date(fechaStr);
     const options = { day: 'numeric', month: 'long' };
     return fecha.toLocaleDateString('es-ES', options);
@@ -48,7 +48,7 @@ const FixtureDetails = ({ fixture }) => {
       
       
     </article>
-  );
+  )
 }
 
 export default FixtureDetails
