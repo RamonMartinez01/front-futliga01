@@ -1,7 +1,56 @@
+
+
 .headernav__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1em;
-    flex-wrap: nowrap;
+    margin: 0.2em;
+    background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
+    border-radius: 8px;
+  }
+  
+  .headernav__header {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .headernav__tittle {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+  }
+  .headernav__section {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .headernav__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
     margin: 0.5em;
-}
+  }
+  
+  .headernav__buttons button {
+    padding: 0.4em 0.8em;
+    font-size: 16px;
+    background-color: #c8d9df79; /* Color de fondo azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+  }
+  
+  .headernav__buttons button:hover,
+  .headernav__buttons button:active {
+    background-color: #005f78; /* Cambio de color al pasar el mouse o al hacer clic */
+  }
+  
+  .headernav__buttons button:focus {
+    outline: none; /* Quita el contorno al hacer clic en el botón */
+  }
