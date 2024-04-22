@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@media screen and (max-width: 360px) {
+    .table__container {
+      overflow-x: auto;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+    .table__tittle {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #f7f9f9;
+        margin-bottom: 1px;
+        background-color: rgb(180, 183, 176);
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 5px;
+    }
+
+    .table__section {
+      width: 100%;
+    }
+  
+    .table__header,
+    .table__body {
+      display: block;
+      width: 100%;
+    }
+  
+    .table__tr-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 0.2em;
+    }
+    .th__played,
+    .th__wins,
+    .th__losses
+    {
+      flex-grow: 0; /* Igual distribución de espacio entre todas las celdas */
+    }
+  
+    .table__tr-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 0.2em;
+    }
+
+    .td__index,
+    .td__logo,
+    .td__name
+    {
+    flex: 1; /* Igual distribución de espacio entre todas las celdas */
+    }
+
+    .td__index,
+    .td__logo,
+    .td__name {
+    flex-grow: 0; /* No permitir que estas celdas crezcan */
+    }
+
+    .td__played
+     {
+    margin-left: auto; /* Empujar estas celdas hacia la derecha */
+    }
+  
+    .table__tr-body:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  
+    .table__tr-body td {
+      display: flex;
+      text-align: center;
+      padding: 8px;
+    }
+  
+    .td__index {
+      font-weight: bold;
+    }
+  
+    .td__name {
+      font-weight: bold;
+    }
+  
+    .td__logo img {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+    }
+   
+  }

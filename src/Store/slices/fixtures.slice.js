@@ -3,14 +3,14 @@ import axios from "axios";
 import API_BASE_URL from "../../utils/apiConfig";
 
 const fixturesSlice = createSlice({
-    name: 'partidos',
+    name: 'fixtures',
     initialState: null,
     reducers: {
-        setPartidos: (currentValue, action) => action.payload
+        setFixtures: (currentValue, action) => action.payload
     }
 })
 
-export const { setPartidos } = fixturesSlice.actions
+export const { setFixtures } = fixturesSlice.actions
 
 export default fixturesSlice.reducer
 
@@ -18,8 +18,8 @@ export const getfixturesThunk = () => (dispatch) => {
     const url = `${API_BASE_URL}`
     axios.get(url)
         .then(res => {
-            const partidos = res.data.response;
-            dispatch(setPartidos(partidos))
+            const fixtures = res.data.response;
+            dispatch(setFixtures(fixtures))
         })
         .catch(err => console.log(err))
 }
