@@ -18,12 +18,12 @@ const HeaderNav = () => {
 
   return (
     <section className="headernav__container">
-        <header>
-           <h2>FUTSAL NIES</h2>
-           <h3>Partidos Jugados</h3>
+        <header className="headernav__header">
+           <h2 className="headernav__tittle">FUTSAL NIES</h2>
+           
         </header>
-        <section>
-        <div>
+        <section className="headernav__section">
+        <div className="headernav__buttons">
             <button onClick={handlePartidos}>Partidos</button>
             <button onClick={handleTable}>Tabla</button>
             <button onClick={handleStats}>Estadísticas</button>
