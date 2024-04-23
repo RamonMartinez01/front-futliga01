@@ -66,6 +66,7 @@ const getTeamLogoUrl = (teamName) => {
          </thead>
          <tbody className="table__body">
           {/* Iterar sobre los equipos ordenados y construir las filas de la tabla */}
+
                     {sortedTeams.map((team, index) => (
                         <tr className="table__tr-body" key={team}>
                             <td className="td__index">{(index + 1).toString()}</td>
