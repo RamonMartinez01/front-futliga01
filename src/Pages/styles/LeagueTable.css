@@ -67,11 +67,6 @@
     .td__name {
     flex-grow: 0; /* No permitir que estas celdas crezcan */
     }
-
-    .td__played
-     {
-    margin-left: auto; /* Empujar estas celdas hacia la derecha */
-    }
   
     .table__tr-body:nth-child(even) {
       background-color: #f2f2f2;
