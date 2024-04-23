@@ -40,7 +40,7 @@ const { teamOccurrences, wins, sortedTeams } = countTeamOccurrencesAndWins();
 
 // Función para obtener la URL del logotipo de un equipo
 const getTeamLogoUrl = (teamName) => {
-  const fixture = fixtures.find(
+  const fixture = fixtures?.find(
       (fixture) => fixture.teams.home.name === teamName || fixture.teams.away.name === teamName
   );
   if (fixture) {
@@ -66,20 +66,21 @@ const getTeamLogoUrl = (teamName) => {
          </thead>
          <tbody className="table__body">
           {/* Iterar sobre los equipos ordenados y construir las filas de la tabla */}
-            {sortedTeams.map((team, index) => (
-              <tr className="table__tr-body" key={team}>
-                <td className="td__index">{index + 1}</td>
-                <td className="td__logo">
-                    {getTeamLogoUrl(team) && (
-                        <img src={getTeamLogoUrl(team)} alt={`Logotipo ${team}`} style={{ width: 30 }} />
-                    )}
-                </td>
-                <td th className="td__name">{team}</td>
-                <td className="td__played">{teamOccurrences[team]}</td>
-                <td className="td__wins">{wins[team] || 0}</td>
-                <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
-              </tr>
-            ))}
+
+                    {sortedTeams.map((team, index) => (
+                        <tr className="table__tr-body" key={team}>
+                            <td className="td__index">{(index + 1).toString()}</td>
+                            <td className="td__logo">
+                                {getTeamLogoUrl(team) && (
+                                    <img src={getTeamLogoUrl(team)} alt={`Logotipo ${team}`} style={{ width: 30 }} />
+                                )}
+                            </td>
+                            <td className="td__name">{(team).toString()}</td>
+                            <td className="td__played">{(teamOccurrences[team]).toString()}</td>
+                            <td className="td__wins">{(wins[team] || 0).toString()}</td>
+                            <td className="td__losses">{(teamOccurrences[team] - (wins[team] || 0)).toString()}</td>
+                        </tr>
+                    ))}
          </tbody>
        </table>
      </div>
