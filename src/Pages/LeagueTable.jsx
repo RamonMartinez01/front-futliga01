@@ -66,20 +66,20 @@ const getTeamLogoUrl = (teamName) => {
          </thead>
          <tbody className="table__body">
           {/* Iterar sobre los equipos ordenados y construir las filas de la tabla */}
-                    {sortedTeams.map((team, index) => (
-                        <tr className="table__tr-body" key={team}>
-                            <td className="td__index">{index + 1}</td>
-                            <td className="td__logo">
-                                {getTeamLogoUrl(team) && (
-                                    <img src={getTeamLogoUrl(team)} alt={`Logotipo ${team}`} style={{ width: 30 }} />
-                                )}
-                            </td>
-                            <td th className="td__name">{team}</td>
-                            <td className="td__played">{teamOccurrences[team]}</td>
-                            <td className="td__wins">{wins[team] || 0}</td>
-                            <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
-                        </tr>
-                    ))}
+            {sortedTeams.map((team, index) => (
+              <tr className="table__tr-body" key={team}>
+                <td className="td__index">{index + 1}</td>
+                <td className="td__logo">
+                    {getTeamLogoUrl(team) && (
+                        <img src={getTeamLogoUrl(team)} alt={`Logotipo ${team}`} style={{ width: 30 }} />
+                    )}
+                </td>
+                <td th className="td__name">{team}</td>
+                <td className="td__played">{teamOccurrences[team]}</td>
+                <td className="td__wins">{wins[team] || 0}</td>
+                <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
+              </tr>
+            ))}
          </tbody>
        </table>
      </div>
