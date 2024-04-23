@@ -75,10 +75,12 @@ const getTeamLogoUrl = (teamName) => {
                                     <img src={getTeamLogoUrl(team)} alt={`Logotipo ${team}`} style={{ width: 30 }} />
                                 )}
                             </td>
-                            <td className="td__name">{(team).toString()}</td>
-                            <td className="td__played">{(teamOccurrences[team]).toString()}</td>
-                            <td className="td__wins">{(wins[team] || 0).toString()}</td>
-                            <td className="td__losses">{(teamOccurrences[team] - (wins[team] || 0)).toString()}</td>
+
+                            <td className="td__name">{team}</td>
+                            <td className="td__played">{teamOccurrences[team]}</td>
+                            <td className="td__wins">{wins[team] || 0}</td>
+                            <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
+
                         </tr>
                     ))}
          </tbody>
