@@ -5,26 +5,26 @@ import './App.css'
 import HomePage from './Pages/HomePage'
 import HeaderNav from './components/HeaderNav/HeaderNav'
 import StatisticsPage from './Pages/StatisticsPage'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import LeagueTable from './Pages/LeagueTable'
 
 
 function App()  {
  
-  /*const fixtures = useSelector(store => store.fixtures)
+  const fixtures = useSelector(store => store.fixtures)
 
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getfixturesThunk())
-  }, [])*/
+  }, [])
 
-  const [fixtures, setFixtures] = useState([]);
+  /*const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
-    // Por ahora, para simular datos de ejemplo, utilizaremos un array vacío
+    // Por ahora, para simular datos de la API, trabajaremos con un JSON de ejemplo 
     const exampleData = [
-      {
+      { //Partido 1
         "fixture": {
           "id": 867946,
           "referee": "H. Ibarra",
@@ -92,7 +92,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 2 
         "fixture": {
           "id": 867947,
           "referee": "A. Madley",
@@ -160,7 +160,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 3
         "fixture": {
           "id": 867948,
           "referee": "P. Bankes",
@@ -228,7 +228,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 4
         "fixture": {
           "id": 867949,
           "referee": "R. Jones",
@@ -296,7 +296,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 5
         "fixture": {
           "id": 867950,
           "referee": "J. Gillett",
@@ -364,7 +364,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 6
         "fixture": {
           "id": 867951,
           "referee": "S. Hooper",
@@ -432,7 +432,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 7
         "fixture": {
           "id": 867952,
           "referee": "A. Marriner",
@@ -500,7 +500,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 8
         "fixture": {
           "id": 867953,
           "referee": "C. Pawson",
@@ -568,7 +568,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 9
         "fixture": {
           "id": 867954,
           "referee": "P. Tierney",
@@ -636,7 +636,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 10
         "fixture": {
           "id": 867955,
           "referee": "M. Oliver",
@@ -704,7 +704,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 11
         "fixture": {
           "id": 867956,
           "referee": "D. England",
@@ -772,7 +772,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 12
         "fixture": {
           "id": 867957,
           "referee": "M. Oliver",
@@ -840,7 +840,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 13
         "fixture": {
           "id": 867958,
           "referee": "S. Attwell",
@@ -908,7 +908,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 14
         "fixture": {
           "id": 867959,
           "referee": "G. Scott",
@@ -976,7 +976,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 15
         "fixture": {
           "id": 867960,
           "referee": "A. Taylor",
@@ -1044,7 +1044,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 16
         "fixture": {
           "id": 867961,
           "referee": "P. Tierney",
@@ -1112,7 +1112,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 17
         "fixture": {
           "id": 867962,
           "referee": "D. Coote",
@@ -1180,7 +1180,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 18
         "fixture": {
           "id": 867963,
           "referee": "R. Jones",
@@ -1248,7 +1248,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 19
         "fixture": {
           "id": 867964,
           "referee": "T. Harrington",
@@ -1316,7 +1316,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 20
         "fixture": {
           "id": 867965,
           "referee": "J. Brooks",
@@ -1384,7 +1384,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 21
         "fixture": {
           "id": 867966,
           "referee": "C. Pawson",
@@ -1452,7 +1452,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 22
         "fixture": {
           "id": 867967,
           "referee": "A. Madley",
@@ -1520,7 +1520,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 23
         "fixture": {
           "id": 867968,
           "referee": "A. Marriner",
@@ -1588,7 +1588,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 24
         "fixture": {
           "id": 867969,
           "referee": "P. Bankes",
@@ -1656,7 +1656,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 25
         "fixture": {
           "id": 867970,
           "referee": "S. Attwell",
@@ -1724,7 +1724,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 26
         "fixture": {
           "id": 867971,
           "referee": "M. Salisbury",
@@ -1792,7 +1792,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 27
         "fixture": {
           "id": 867972,
           "referee": "M. Oliver",
@@ -1860,7 +1860,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 28
         "fixture": {
           "id": 867973,
           "referee": "J. Gillett",
@@ -1928,7 +1928,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 29
         "fixture": {
           "id": 867974,
           "referee": "S. Hooper",
@@ -1996,7 +1996,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 30
         "fixture": {
           "id": 867975,
           "referee": "A. Taylor",
@@ -2064,7 +2064,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 31
         "fixture": {
           "id": 867976,
           "referee": "J. Gillett",
@@ -2132,7 +2132,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 32
         "fixture": {
           "id": 867977,
           "referee": "D. Coote",
@@ -2200,7 +2200,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 33
         "fixture": {
           "id": 867978,
           "referee": "J. Brooks",
@@ -2268,7 +2268,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 34
         "fixture": {
           "id": 867979,
           "referee": "M. Salisbury",
@@ -2336,7 +2336,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 35
         "fixture": {
           "id": 867980,
           "referee": "P. Tierney",
@@ -2404,7 +2404,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 36
         "fixture": {
           "id": 867981,
           "referee": "S. Attwell",
@@ -2472,7 +2472,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 37
         "fixture": {
           "id": 867982,
           "referee": "D. England",
@@ -2540,7 +2540,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 38
         "fixture": {
           "id": 867983,
           "referee": "C. Pawson",
@@ -2608,7 +2608,7 @@ function App()  {
           }
         }
       },
-      {
+      { //Partido 39
         "fixture": {
           "id": 867984,
           "referee": "A. Madley",
@@ -2678,7 +2678,7 @@ function App()  {
       }
     ]; // Aquí pondrías los datos de ejemplo
     setFixtures(exampleData);
-  }, []);
+  }, []);*/
   
 
   return(
