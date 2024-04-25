@@ -74,10 +74,9 @@
     color: #666;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     .fixture__details {
-        padding: 0.3em;
-        
+       padding: 5 10 0.3 10em;
       }
     
     .fixture__details-match {
@@ -85,6 +84,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
+        
     }
       
       .fixture__teams-home,
