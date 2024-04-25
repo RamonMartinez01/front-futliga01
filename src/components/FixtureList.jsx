@@ -50,12 +50,12 @@ const FixtureList = ({ fixtures }) => {
       ))}
       </div>
       <div className="pagination">
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>
-           Previous
+        <button className="btn-prev" onClick={goToPreviousPage} disabled={currentPage === 1}>
+           Anterior
         </button>
-          <span>{`Page ${currentPage} of ${totalPages}`}</span>
-          <button onClick={goToNextPage} disabled={currentPage === totalPages}>
-            Next
+          <span className="pagination-span">{`Página ${currentPage} de ${totalPages}`}</span>
+          <button className="btn-next" onClick={goToNextPage} disabled={currentPage === totalPages}>
+            Siguiente
         </button>
       </div>
     </div>
