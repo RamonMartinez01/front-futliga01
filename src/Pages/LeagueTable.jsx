@@ -56,12 +56,16 @@ const getTeamLogoUrl = (teamName) => {
        <table className="table__section">
          <thead className="table__header">
            <tr className="table__tr-header">
-            <th className="th__index"></th>
-            <th className="th__logo">Equipo</th>
-            <th className="th__name"></th>
-            <th className="th__played">J</th>
-            <th className="th__wins">G</th>
-            <th className="th__losses">P</th>
+            <div className='header-left'>
+              <th className="th__index"></th>
+              <th className="th__logo">Equipo</th>
+              <th className="th__name"></th>
+            </div>
+            <div className='header-right'>
+              <th className="th__played">J</th>
+              <th className="th__wins">G</th>
+              <th className="th__losses">P</th>
+            </div>
            </tr>
          </thead>
          <tbody className="table__body">
@@ -69,6 +73,7 @@ const getTeamLogoUrl = (teamName) => {
 
                     {sortedTeams.map((team, index) => (
                         <tr className="table__tr-body" key={team}>
+                          <div className='LEFT'>
                             <td className="td__index">{(index + 1).toString()}</td>
                             <td className="td__logo">
                                 {getTeamLogoUrl(team) && (
@@ -77,10 +82,12 @@ const getTeamLogoUrl = (teamName) => {
                             </td>
 
                             <td className="td__name">{team}</td>
+                          </div>
+                          <div className='RIGHT'>
                             <td className="td__played">{teamOccurrences[team]}</td>
                             <td className="td__wins">{wins[team] || 0}</td>
                             <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
-
+                          </div>
                         </tr>
                     ))}
          </tbody>
