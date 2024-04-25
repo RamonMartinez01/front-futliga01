@@ -73,12 +73,6 @@
     font-size: 0.8em;
     color: #666;
   }
-  
-  /*.fixture__card-separator {
-    margin-top: 10px;
-    border: none;
-    border-top: 1px solid #ccc;
-  }*/
 
   @media screen and (max-width: 360px) {
     .fixture__details {
@@ -99,22 +93,33 @@
         flex-direction: column;
         align-items: center;
         gap: 0.4em;
+        max-width: 4.8em;
+        min-width: 4.7em;
       }
     
       .fixture__home-logo-goals {
         display: flex;
+        width: 80%;
         flex-direction: row;
+        align-items: start;
       }
       .fixture__away-logo-goals {
         display: flex;
         flex-direction: row;
-        width: 4em;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: end;
       }
       
-      .fixture__home-logo,
+      /*.fixture__home-logo,*/
       .fixture__away-logo {
-        margin-right: 10px;
+       display: flex;
+       flex-direction: row;
+       align-items: end;
+      }
+      .fixture__away-goals {
+        margin-right: 0.4em;
       }
       
       .fixture__home-logo img,
@@ -130,12 +135,21 @@
       }
 
       .fixture__teams-home-name {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
         font-size: 0.9rem;
         font-weight: 500;
       }      
       .fixture__teams-away-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: flex-end;
+        text-align: center;
         font-size: 0.9rem;
         font-weight: 500;
+        margin-right: 0.2em;
       }   
       .fixture__status {
         text-align: center;
@@ -145,7 +159,7 @@
       
       .fixture__status-status {
         font-weight: bold;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         margin: 0;
       }
       
