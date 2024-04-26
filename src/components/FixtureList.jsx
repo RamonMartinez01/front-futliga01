@@ -1,48 +1,44 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FixtureDetails from "./FixtureDetails";
 import './styles/FixtureList.css'
+import useFetch from "../hooks/useFetch";
 
 const PAGE_SIZE = 20;
-const FixtureList = ({ fixtures }) => {
-
+const FixtureList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [currentPageFixtures, setCurrentPageFixtures] = useState([]);
 
-  useEffect(() => {
-    setTotalPages(Math.ceil(fixtures?.length / PAGE_SIZE));
-    setCurrentPageFixtures(getCurrentPageFixtures());
-  }, [fixtures, currentPage]);
-
-  const getCurrentPageFixtures = () => {
-    const startIndex = (currentPage - 1) * PAGE_SIZE;
-    const endIndex = Math.min(startIndex + PAGE_SIZE, fixtures?.length);
-    return fixtures.slice(startIndex, endIndex);
-  };
+  const { data, loading, error } = useFetch('fixtures');
 
   const goToPage = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
+    setCurrentPage(page);
   };
 
   const goToPreviousPage = () => {
-    goToPage(currentPage - 1);
+    setCurrentPage(currentPage - 1);
   };
 
-  const goToNextPage = () => {
-    goToPage(currentPage + 1);
-  };
+  // Calculate total number of pages
+  const totalPages = Math.ceil(data?.length / PAGE_SIZE);
 
-  if (!fixtures || fixtures?.length === 0) {
-    return <div className="Warning__API">Por ahora no hay datos disponibles!</div>;
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  // Calculate current page fixtures
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const currentPageFixtures = data.slice(startIndex, endIndex);
+
+console.log(currentPageFixtures);
   return (
     <div className="fixture-list">
      
       <div className="fixture__card">{
-      currentPageFixtures?.map((fixture, index) => (
+      currentPageFixtures.map((fixture, index) => (
         <div className="fixture__card-container" key={index}>
           <FixtureDetails fixture={fixture} />
           
@@ -54,7 +50,7 @@ const FixtureList = ({ fixtures }) => {
            Anterior
         </button>
           <span className="pagination-span">{`Página ${currentPage} de ${totalPages}`}</span>
-          <button className="btn-next" onClick={goToNextPage} disabled={currentPage === totalPages}>
+          <button className="btn-next" onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>
             Siguiente
         </button>
       </div>

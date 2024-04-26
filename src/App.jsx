@@ -5,21 +5,21 @@ import './App.css'
 import HomePage from './Pages/HomePage'
 import HeaderNav from './components/HeaderNav/HeaderNav'
 import StatisticsPage from './Pages/StatisticsPage'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import LeagueTable from './Pages/LeagueTable'
 
 
 function App()  {
  
-  /*const fixtures = useSelector(store => store.fixtures)
+  const fixtures = useSelector(store => store.fixtures)
 
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getfixturesThunk())
-  }, [])*/
+  }, [])
 
-  const [fixtures, setFixtures] = useState([]);
+ /* const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
     // Por ahora, para simular datos de la API, trabajaremos con un JSON de ejemplo 
@@ -2678,7 +2678,7 @@ function App()  {
       }
     ]; // Aquí pondrías los datos de ejemplo
     setFixtures(exampleData);
-  }, []);
+  }, []);*/
   
 
   return(
@@ -2686,7 +2686,7 @@ function App()  {
       <HeaderNav/>
       <Routes>
         <Route path='/' element={<HomePage 
-        fixtures={fixtures}
+        
         />}/>
         <Route path='/table' element={<LeagueTable 
         fixtures={fixtures}
