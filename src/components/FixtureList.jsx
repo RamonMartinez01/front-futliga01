@@ -33,7 +33,7 @@ const FixtureList = () => {
   const endIndex = startIndex + PAGE_SIZE;
   const currentPageFixtures = data.slice(startIndex, endIndex);
 
-console.log(currentPageFixtures);
+
   return (
     <div className="fixture-list">
      
