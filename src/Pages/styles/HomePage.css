@@ -1,3 +1,20 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    padding-bottom: 1em;
+}
 .home__table {
     display: none;
+}
+
+.home__topfive-container {
+    border-top: 0.29em solid #4E4C70;
+    border-bottom: 0.29em solid #4E4C70;
+    border-radius: 0.9em;
+}
+.home__topsix-container {
+    border-top: 0.29em solid #4E4C70;
+    border-bottom: 0.29em solid #4E4C70;
+    border-radius: 0.9em;
 }
