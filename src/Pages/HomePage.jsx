@@ -2,12 +2,14 @@ import FixtureList from '../components/FixtureList';
 import './styles/HomePage.css'
 
 
-const HomePage = () => {
+const HomePage = ({ fixtures }) => {
     
   return (
     <section>
       <div className="home__list-container">
-        <FixtureList />
+        
+        <FixtureList 
+        fixtures={fixtures}/>
       </div>
 
          
