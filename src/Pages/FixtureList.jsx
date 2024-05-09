@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FixtureDetails from "./FixtureDetails";
+import FixtureDetails from "../components/FixtureDetails";
 import './styles/FixtureList.css'
 
 const PAGE_SIZE = 20;

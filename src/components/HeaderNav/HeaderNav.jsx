@@ -8,10 +8,13 @@ const HeaderNav = () => {
     navigate('/table')
   }
   const handlePartidos = () =>{
-    navigate('/')
+    navigate('/list')
   }
   const handleStats = () =>{
     navigate('/stats')
+  }
+  const handleHome = () => {
+    navigate('/')
   }
 
   return (
@@ -22,6 +25,7 @@ const HeaderNav = () => {
         </header>
         <section className="headernav__section">
         <div className="headernav__buttons">
+            <button onClick={handleHome}>Home</button>
             <button onClick={handlePartidos}>Partidos</button>
             <button onClick={handleTable}>Tabla</button>
             <button onClick={handleStats}>Estadísticas</button>

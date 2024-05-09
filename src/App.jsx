@@ -7,7 +7,7 @@ import HeaderNav from './components/HeaderNav/HeaderNav'
 import StatisticsPage from './Pages/StatisticsPage'
 import { useEffect, useState } from 'react'
 import LeagueTable from './Pages/LeagueTable'
-import FixtureList from './components/FixtureList'
+import FixtureList from './Pages/FixtureList'
 
 function App()  {
   const [ loading, setLoading ] = useState(true)
@@ -42,7 +42,9 @@ function App()  {
         <Route path='/' element={<HomePage 
          fixtures={fixtures}
         />}/>
-        <Route path='/list' element={ <FixtureList />}/>
+        <Route path='/list' element={ <FixtureList 
+        fixtures={fixtures}
+        />}/>
         <Route path='/table' element={<LeagueTable 
         fixtures={fixtures}
         />}/>
