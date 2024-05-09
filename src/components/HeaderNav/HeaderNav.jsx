@@ -2,9 +2,7 @@ import { useNavigate } from "react-router-dom"
 import './styles/HeaderNav.css'
 
 const HeaderNav = () => {
-
-    const navigate = useNavigate()
-
+  const navigate = useNavigate()
 
   const handleTable = () =>{
     navigate('/table')

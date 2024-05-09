@@ -16,10 +16,14 @@ export default fixturesSlice.reducer
 
 export const getfixturesThunk = () => (dispatch) => {
     const url = `${API_BASE_URL}`
-    axios.get(url)
+    return axios.get(url)
         .then(res => {
             const fixtures = res.data.response;
             dispatch(setFixtures(fixtures))
+            return fixtures;
         })
-        .catch(err => console.log(err))
-}
+        .catch(err => {
+            console.error('Error fething fixtures:', err );
+            throw err;
+        });
+    }

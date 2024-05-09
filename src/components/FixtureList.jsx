@@ -1,14 +1,11 @@
 import { useState } from "react";
 import FixtureDetails from "./FixtureDetails";
 import './styles/FixtureList.css'
-import useFetch from "../hooks/useFetch";
 
 const PAGE_SIZE = 20;
-const FixtureList = () => {
+const FixtureList = ({ fixtures }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
-  const { data, loading, error } = useFetch('fixtures');
-
+ 
   const goToPage = (page) => {
     setCurrentPage(page);
   };
@@ -18,20 +15,12 @@ const FixtureList = () => {
   };
 
   // Calculate total number of pages
-  const totalPages = Math.ceil(data?.length / PAGE_SIZE);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const totalPages = Math.ceil(fixtures?.length / PAGE_SIZE);
 
   // Calculate current page fixtures
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = startIndex + PAGE_SIZE;
-  const currentPageFixtures = data.slice(startIndex, endIndex);
+  const currentPageFixtures = fixtures?.slice(startIndex, endIndex);
 
 
   return (
