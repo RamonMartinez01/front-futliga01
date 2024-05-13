@@ -17,17 +17,22 @@ const HomePage = ({ fixtures }) => {
   return (
     <section className='home'>
       <div className="home__topfive-container">
-        <TopFive
-        fixtures={fixtures}/>
-        <div className='topfive__complete'>
-          <button className='gotolist__button' onClick={handleList}>Ver lista completa</button>
+        <span className='topfive__title'>Últimos partidos</span>
+        <div className='topfive__cards-container'>
+          <TopFive
+          fixtures={fixtures}/>
+        </div>
+        <div className='topfive__button-container'>
+          <button className='topfive__gotolist-button' onClick={handleList}>Ver lista completa</button>
         </div>
       </div>
-      <div className='home__topsix-container'>
-        <TopSixTable
-        fixtures={fixtures}/>
-        <div className='topsix__complete'>
-          <button className='gototable__button' onClick={handleTable}>Ver lista completa</button>
+      <div className='home__toptable-container'>
+        <span className='toptable__title'>Tabla</span>
+        <div className='toptable__table'><TopSixTable
+          fixtures={fixtures}/>
+        </div> 
+        <div className='toptable__button-container'>
+          <button className='gototable__button' onClick={handleTable}>Ver tabla completa</button>
         </div>
       </div>
          
