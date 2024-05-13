@@ -50,17 +50,18 @@ const TopSixTable = ({ fixtures }) => {
     return null; // Si no se encuentra el logotipo, retornar null
   };
    // Tomar solo las primeras seis posiciones
-    const topSixTeams = sortedTeams.slice(0, 6);
+    const topSixTeams = sortedTeams.slice(0, 15);
 
   return (
     <div className="table__container">
-      <h2 className="table__title">Tabla </h2>
       <table className="table__section">
         <thead className="table__header">
-          <tr className="table__tr-header">
+          <tr className="table__tr-header01">
             <th className="th__index"></th>
             <th className="th__logo">Equipo</th>
             <th className="th__name"></th>
+          </tr>
+          <tr className="table__tr-header01">
             <th className="th__played">J</th>
             <th className="th__wins">G</th>
             <th className="th__losses">P</th>

@@ -74,7 +74,7 @@
     color: #666;
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 430px) {
     .fixture__details {
        padding: 5 10 0.3 10em;
       }

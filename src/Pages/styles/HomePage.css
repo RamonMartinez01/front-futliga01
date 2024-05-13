@@ -12,9 +12,115 @@
     border-top: 0.29em solid #4E4C70;
     border-bottom: 0.29em solid #4E4C70;
     border-radius: 0.9em;
+    overflow: hidden;
+    background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
 }
-.home__topsix-container {
+.topfive__title {
+    display: flex;
+    width: 100%;
+    height: 1.5em;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
+    padding: 0.8em;
+    font-size: 16px;
+  
+    color: white;
+}
+.topfive__cards-container{
+    padding-left: 0.12em;
+    padding-right: 0.12em;
+    overflow-y: auto;
+    max-height: 15em;
+    position: relative;
+}
+.topfive__cards-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.topfive__cards-container::before {
+    content: ''; /* Create a pseudo-element for the shadow */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Adjust the height of the shadow as needed */
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.8); /* Shadow appearance */
+    pointer-events: none; /* Ensure the shadow doesn't interfere with scrolling */
+}
+
+.topfive__cards-container::after {
+    content: ''; /* Create a pseudo-element for the shadow */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Adjust the height of the shadow as needed */
+    box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.8); /* Shadow appearance */
+    pointer-events: none; /* Ensure the shadow doesn't interfere with scrolling */
+}
+
+.topfive__button-container {
+    display: flex;
+    justify-content: center;
+}
+.topfive__gotolist-button {
+    padding: 0.4em 0.8em;
+    font-size: 16px;
+    background-color: #c8d9df79; /* Color de fondo azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.topfive__gotolist-button:active {
+    background-color: #005f78; /* Cambio de color al pasar el mouse o al hacer clic */
+  }
+
+/*----TABLA----*/
+.home__toptable-container {
     border-top: 0.29em solid #4E4C70;
     border-bottom: 0.29em solid #4E4C70;
     border-radius: 0.9em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right,  #4CAF50, #4e4c70fa);
 }
+.toptable__title {
+    display: flex;
+    width: 100%;
+    height: 1.5em;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
+    padding: 0.8em;
+    font-size: 16px;
+    color: white;
+}
+.toptable__table {
+    overflow-y: auto;
+    max-height: 15em;
+}
+.toptable__table::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+.toptable__button-container {
+    display: flex;
+    justify-content: center;
+}
+.gototable__button {
+    padding: 0.4em 0.8em;
+    font-size: 16px;
+    background-color: #c8d9df79; /* Color de fondo azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.90s;
+}
+
+.gototable__button:active {
+    background-color: #005f78; /* Cambio de color al pasar el mouse o al hacer clic */
+  }
