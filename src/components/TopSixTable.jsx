@@ -6,12 +6,15 @@ const TopSixTable = ({ fixtures }) => {
     const counTeamOccurrencesAndWins = () => {
         const teamOccurrences = {};
         const wins ={};
+        const points ={};
 
         fixtures?.forEach((fixture) => {
             const homeTeamName = fixture.teams.home.name;
             const awayTeamName = fixture.teams.away.name;
             const homeWinner = fixture.teams.home.winner;
             const awayWinner = fixture.teams.away.winner;
+            const homeTeamPoints = fixture?.goals.home; 
+            const awayTeamPoints = fixture?.goals.away;
 
             //Incrementar la occurrencia del equipo local
             teamOccurrences[homeTeamName] = (teamOccurrences[homeTeamName] || 0) + 1;
@@ -26,18 +29,22 @@ const TopSixTable = ({ fixtures }) => {
             if (awayWinner) {
                 wins[awayTeamName] = (wins[awayTeamName] || 0) +1;
             }
+
+              // Almacenar los puntos de cada equipo
+            points[homeTeamName] = (points[homeTeamName] || 0) + homeTeamPoints;
+            points[awayTeamName] = (points[awayTeamName] || 0) + awayTeamPoints;
         });
 
         //Ordenar los equipos por número de victorias (en orden descendente)
         const allTeams = Object.keys(teamOccurrences);
         const sortedTeams = allTeams.sort((a, b) => (wins[b] ||0) - (wins[a] || 0));
 
-        return { teamOccurrences, wins, sortedTeams };
+        return { teamOccurrences, wins, points, sortedTeams };
     };
 
     // Obtener el objeto con las ocurrencias de los equipos y sus victorias, 
     //así como los equipos ordenados
-    const { teamOccurrences, wins, sortedTeams } = counTeamOccurrencesAndWins();
+    const { teamOccurrences, wins, points, sortedTeams } = counTeamOccurrencesAndWins();
 
     // Función para obtener el URL del logotipo de un equipo
   const getTeamLogoUrl = (teamName) => {
@@ -61,10 +68,11 @@ const TopSixTable = ({ fixtures }) => {
             <th className="th__logo">Equipo</th>
             <th className="th__name"></th>
           </tr>
-          <tr className="table__tr-header01">
+          <tr className="table__tr-header02">
             <th className="th__played">J</th>
             <th className="th__wins">G</th>
             <th className="th__losses">P</th>
+            <th className="th__points">Pts</th>
           </tr>
         </thead>
         <tbody className="table__body">
@@ -80,6 +88,7 @@ const TopSixTable = ({ fixtures }) => {
               <td className="td__played">{teamOccurrences[team]}</td>
               <td className="td__wins">{wins[team] || 0}</td>
               <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
+              <td className="td__points">{points[team] || 0}</td>
             </tr>
           ))}
         </tbody>
