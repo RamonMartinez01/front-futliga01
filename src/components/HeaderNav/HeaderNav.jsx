@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import './styles/HeaderNav.css'
 
 const HeaderNav = () => {
   const navigate = useNavigate()
+  const location = useLocation()
 
   const handleTable = () =>{
     navigate('/table')
@@ -25,10 +26,14 @@ const HeaderNav = () => {
         </header>
         <section className="headernav__section">
         <div className="headernav__buttons">
-            <button onClick={handleHome}>Home</button>
-            <button onClick={handlePartidos}>Partidos</button>
-            <button onClick={handleTable}>Tabla</button>
-            <button onClick={handleStats}>Estadísticas</button>
+            <button onClick={handleHome}
+            className={location.pathname === '/' ? 'active' : ''}>Home</button>
+            <button onClick={handlePartidos}
+             className={location.pathname === '/list' ? 'active' : ''}>Partidos</button>
+            <button onClick={handleTable}
+            className={location.pathname === '/table' ? 'active' : ''}>Tabla</button>
+            <button onClick={handleStats}
+            className={location.pathname === '/stats' ? 'active' : ''}>Estadísticas</button>
           </div>
         </section>
     </section>

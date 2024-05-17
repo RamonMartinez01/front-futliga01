@@ -35,7 +35,7 @@ function App()  {
   }
 
   return(
-    <div>
+    <div className='APP'>
       <HeaderNav
       fixtures={fixtures}/>
       <Routes>

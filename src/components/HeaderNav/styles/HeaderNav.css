@@ -23,6 +23,7 @@
   .headernav__section {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
   
   .headernav__buttons {
@@ -46,11 +47,36 @@
     transition: background-color 0.3s; /* Transición suave del color de fondo */
   }
   
-  .headernav__buttons button:hover,
-  .headernav__buttons button:active {
-    background-color: #005f78; /* Cambio de color al pasar el mouse o al hacer clic */
+  .headernav__buttons button:hover{
+    background-color: #017f9f;
   }
   
   .headernav__buttons button:focus {
     outline: none; /* Quita el contorno al hacer clic en el botón */
+  }
+  .headernav__buttons button.active {
+    background-color: #005f78;
+  }
+
+  @media screen and (max-width: 390px) {
+
+    .headernav__header {
+      padding: 10px;
+      padding-bottom: 0;
+      text-align: center;
+    }
+    .headernav__buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      gap: 10px;
+      margin: 0.5em;
+    }
+    .headernav__buttons button {
+      width: 6.5em;
+      height: 2.em;
+      font-size: 0.8rem;
+    }
   }
