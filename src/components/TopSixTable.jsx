@@ -63,7 +63,7 @@ const TopSixTable = ({ fixtures }) => {
     <div className="table__container">
       <table className="table__section">
         <thead className="table__header">
-          <tr className="table__tr-header01">
+          <tr className="table__tr-headerZ1">
             <th className="th__index"></th>
             <th className="th__logo">Equipo</th>
             <th className="th__name"></th>
