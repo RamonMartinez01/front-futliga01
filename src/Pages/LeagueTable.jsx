@@ -52,7 +52,9 @@ const getTeamLogoUrl = (teamName) => {
    
    return (
      <div className="table__container">
-       <h2 className="table__tittle"></h2>
+      <section>
+       <h2 className="table__tittle">Tabla de la Liga </h2>
+       <hr />
        <table className="table__section">
          <thead className="table__header">
            <tr className="table__tr-header">
@@ -92,6 +94,7 @@ const getTeamLogoUrl = (teamName) => {
                     ))}
          </tbody>
        </table>
+       </section>
      </div>
    );
    };
