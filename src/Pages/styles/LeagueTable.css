@@ -1,5 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+.table__container {
+  width: 100%;
+  margin: 0;
+}
+
+.table__tittle {
+  height: 2em;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-bottom: 1px;
+    margin-left: 2em;
+    margin-top: 1.5em;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    display: flex;
+}
+
+.table__section {
+  width: 100%;
+}
+
+.table__header {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+}
+.table__body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.table__tr-header01 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c6d7c8c6;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.2em;
+}
+.header-right {
+  display: flex;
+  align-self: flex-end;
+  width: 25%;
+  justify-content: space-between;
+}
+
+.LEFT {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3em;
+}
+.RIGHT {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 5.8em;
+  
+}
+
+.table__tr-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.2em;
+}
+.td__name {
+  min-width: 6.2em;
+}
+.td__index,
+.td__logo,
+.td__name
+{
+flex: 1; /* Igual distribución de espacio entre todas las celdas */
+}
+
+.td__index,
+.td__logo,
+.td__name {
+flex-grow: 0; /* No permitir que estas celdas crezcan */
+}
+
+.table__tr-body:nth-child(even) {
+  background-color: #c6d7c8c6;
+}
+
+.table__tr-body td {
+  display: flex;
+  text-align: center;
+  padding: 8px;
+}
+
+.td__index {
+  font-weight: bold;
+}
+
+.td__name {
+  font-weight: bold;
+}
+
+.td__logo img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.th__played, .th__wins, .th__losses  {
+  color: rgb(0, 0, 0);
+  font-size: small;
+}
+
 @media screen and (max-width: 430px) {
     .table__container {
       overflow-x: auto;
