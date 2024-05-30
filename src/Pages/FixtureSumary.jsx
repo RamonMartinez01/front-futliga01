@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
-import './styles/FixtureSummary.css'; // Adjust the path as needed
+import './styles/FixtureSummary.css'; 
 
 const FixtureSummary = ({ fixtures }) => {
   const { id } = useParams();
@@ -21,7 +21,7 @@ const FixtureSummary = ({ fixtures }) => {
   }
 
     
-    // Function to render match note details
+    /*// Function to render match note details
 const renderMatchNote = (note) => {
     // Check if note is defined and contains the note property
     if (!note || !note.note) {
@@ -36,7 +36,7 @@ const renderMatchNote = (note) => {
     return paragraphs.map((paragraph, index) => (
       <p key={index}>{paragraph}</p>
     ));
-  };
+  };*/
 
   return (
     <div className="fixture-summary">
@@ -63,7 +63,7 @@ const renderMatchNote = (note) => {
         <div className="fixture-summary__match-note">
           <span className="fixture-summary__match-note-title">Nota del Parido:</span>
           <div className="fixture-summary__match-note-content">
-          {matchNote}
+             {matchNote}
           </div>
         </div>
       </div>

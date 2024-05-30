@@ -84,6 +84,10 @@
     font-size: 1.2rem;
     line-height: 1.5;
     margin: 0;
+    white-space: pre-wrap; /* This will handle newlines and wrap text */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    overflow-wrap: break-word;
+    text-align: left;
   }
   
   @media screen and (max-width: 768px) {
