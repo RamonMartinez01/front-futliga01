@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import FixtureDetails from "../components/FixtureDetails";
 import './styles/FixtureList.css'
 
 const PAGE_SIZE = 20;
 const FixtureList = ({ fixtures }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
  
   const goToPage = (page) => {
     setCurrentPage(page);
@@ -22,13 +24,19 @@ const FixtureList = ({ fixtures }) => {
   const endIndex = startIndex + PAGE_SIZE;
   const currentPageFixtures = fixtures?.slice(startIndex, endIndex);
 
+  const handleFixtureClick = (id) => {
+    navigate(`/fixture/${id}`);
+  }; 
+
 
   return (
     <div className="fixture-list">
      
       <div className="fixture__card">{
       currentPageFixtures.map((fixture, index) => (
-        <div className="fixture__card-container" key={index}>
+        <div className="fixture__card-container"
+         key={index}
+         onClick={() => handleFixtureClick(fixture.fixture.id)}>
           <FixtureDetails fixture={fixture} />
           
         </div>

@@ -1,0 +1,103 @@
+.fixture-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .breadcrumb {
+    width: 100%;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    font-size: 0.9rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .breadcrumb a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .fixture-summary__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right, #4CAF50, #4E4C70);
+    padding: 1em;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+  
+  .fixture-summary__header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .fixture-summary__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+  }
+  
+  .fixture-summary__details-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fixture-summary__details-item span {
+    font-weight: bold;
+  }
+  .fixture-summary__match-note {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .fixture-summary__match-note-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .fixture-summary__match-note-content {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .fixture-summary {
+      padding: 0.5em;
+    }
+  
+    .fixture-summary__header h1 {
+      font-size: 1.2rem;
+    }
+  
+    .fixture-summary__details-item {
+      padding: 0.5em;
+    }
+  }
+
+  

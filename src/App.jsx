@@ -8,6 +8,7 @@ import StatisticsPage from './Pages/StatisticsPage'
 import { useEffect, useState } from 'react'
 import LeagueTable from './Pages/LeagueTable'
 import FixtureList from './Pages/FixtureList'
+import FixtureSummary from './Pages/FixtureSumary'
 
 function App()  {
   const [ loading, setLoading ] = useState(true)
@@ -50,6 +51,8 @@ function App()  {
         />}/>
         <Route path='/stats' element={<StatisticsPage
         fixtures={fixtures} />}/>
+        <Route path='/fixture/:id' element={<FixtureSummary 
+        fixtures={fixtures} />} />
       </Routes>
     </div>
   )
