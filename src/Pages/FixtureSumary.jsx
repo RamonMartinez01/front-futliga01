@@ -6,7 +6,7 @@ const FixtureSummary = ({ fixtures }) => {
   const { id } = useParams();
   const fixture = fixtures.find((f) => f.fixture.id === parseInt(id));
 
-  const { data: matchNote, loading, error } = useFetch(`http://64.23.243.233:6969/v1/match_note`);
+  const { data: matchNote, loading, error } = useFetch(`https://proxy-futliga01.onrender.com/api/match_note`);
     console.log(matchNote);
   if (!fixture) {
     return <div>Fixture not found</div>;
@@ -21,23 +21,6 @@ const FixtureSummary = ({ fixtures }) => {
   }
 
     
-    /*// Function to render match note details
-const renderMatchNote = (note) => {
-    // Check if note is defined and contains the note property
-    if (!note || !note.note) {
-      // If note is undefined or does not contain the note property, return a default message
-      return <p>No additional notes available</p>;
-    }
-  
-    // Split the text based on the newline character '\n'
-    const paragraphs = note.note.split('\n') || [];
-  
-    // Map over the resulting array, wrapping each segment in a <p> tag and assigning a unique key
-    return paragraphs.map((paragraph, index) => (
-      <p key={index}>{paragraph}</p>
-    ));
-  };*/
-
   return (
     <div className="fixture-summary">
         <nav className="breadcrumb">
