@@ -29,7 +29,8 @@ const HeaderNav = () => {
             <button onClick={handleHome}
             className={location.pathname === '/' ? 'active' : ''}>Home</button>
             <button onClick={handlePartidos}
-             className={location.pathname === '/list' ? 'active' : ''}>Partidos</button>
+             className={location.pathname.startsWith('/list') 
+             || location.pathname.startsWith('/fixture/') ? 'active' : ''}>Partidos</button>
             <button onClick={handleTable}
             className={location.pathname === '/table' ? 'active' : ''}>Tabla</button>
             <button onClick={handleStats}

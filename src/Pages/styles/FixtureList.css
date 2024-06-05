@@ -45,3 +45,6 @@
     background-color: #005f78; /* Cambio de color al pasar el mouse o al hacer clic */
     outline: none; /* Quita el contorno al hacer clic en el botón */
   }
+  .fixture__card-container {
+    cursor: pointer;
+  }
