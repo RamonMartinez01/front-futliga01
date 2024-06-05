@@ -44,7 +44,7 @@ const FixtureSummary = ({ fixtures }) => {
         </div>
        {/* Render additional match note details */}
         <div className="fixture-summary__match-note">
-          <span className="fixture-summary__match-note-title">Nota del Parido:</span>
+          <span className="fixture-summary__match-note-title">Nota del Partido:</span>
           <div className="fixture-summary__match-note-content">
              {matchNote}
           </div>
