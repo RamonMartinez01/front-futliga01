@@ -4,30 +4,38 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: aliceblue;
 }
 
-/* Style the container */
-.container {
+/* Style the loading container */
+.loading__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    background-color: #04336c;
+}
+
+.img__container {
     background-image: url('../futsalPortada01.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 600px;
     background-size: cover;
     background-position: center;
-    width: 100%; /* Adjust the width as needed */
-    min-height: 100vh; /* Adjust the height as needed */
-    border: 1px solid #ccc; /* Add a border for visibility */
-    overflow: hidden; /* Hide any overflow content */
-    position: relative; /* Ensure position properties work correctly */
+    position: relative; 
 }
 
-/* Center the image vertically and horizontally */
-.img-wrapper {
-    position: absolute;
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-h3 {
+.loading__title h3 {
     color: #8ac226;
 }
+.loading__title {
+    position: absolute;
+    top: 53%;
+}
+
