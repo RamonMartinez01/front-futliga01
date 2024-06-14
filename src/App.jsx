@@ -26,10 +26,12 @@ function App()  {
   if (loading) {
     // Render loading image while waiting for fixtures
     return (
-      <div className='container'>
-        <div className="img-wrapper">
-          
-           <h3>Cargando...</h3>
+      <div className='loading__container'>
+        <div className='img__container'>
+          <div className="loading__title">
+            
+            <h3>Cargando...</h3>
+          </div>
         </div>
       </div>
     );
