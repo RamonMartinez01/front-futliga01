@@ -20,8 +20,8 @@
     border-top: 0.29em solid #4E4C70;
     border-bottom: 0.29em solid #4E4C70;
     border-radius: 0.9em;
-    overflow: hidden;
     background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
+    overflow-y: hidden;
 }
 .topfive__title {
     display: flex;
@@ -32,7 +32,7 @@
     background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
     padding: 0.8em;
     font-size: 16px;
-
+    border-radius: 0.8em;
     color: white;
 }
 .topfive__cards-container{
@@ -41,6 +41,7 @@
     overflow-y: auto;
     height: 28em;
     z-index: 100;
+    overflow: hidden;
 }
 .topfive__button-container {
     display: flex;
@@ -69,7 +70,6 @@
     border-top: 0.29em solid #4E4C70;
     border-bottom: 0.29em solid #4E4C70;
     border-radius: 0.9em;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to right,  #4CAF50, #4e4c70fa);
@@ -84,6 +84,10 @@
     padding: 0.8em;
     font-size: 16px;
     color: white;
+    border-radius: 0.8em;
+}
+.toptable__table {
+    overflow-y: hidden;
 }
 .toptable__button-container {
     display: flex;
