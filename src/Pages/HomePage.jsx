@@ -4,6 +4,7 @@ import './styles/HomePage.css'
 import TopSixTable from '../components/TopSixTable';
 import { useEffect, useRef, useState } from 'react';
 import FixturePc from '../components/FixturePc/FixturePc';
+import FullTable from '../components/FullTable/FullTable';
 
 
 const HomePage = ({ fixtures }) => {
@@ -34,6 +35,10 @@ const HomePage = ({ fixtures }) => {
            <FixturePc
            fixtures={fixtures} />
           </div>
+        </div>
+        <div className='full-table__container'>
+          <FullTable
+          fixtures={fixtures} />
         </div>
         <div className="home__topfive-container">
           <span className='topfive__title'>Últimos partidos</span>
