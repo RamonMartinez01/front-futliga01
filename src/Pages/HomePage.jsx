@@ -3,6 +3,7 @@ import TopFive from '../components/TopFive';
 import './styles/HomePage.css'
 import TopSixTable from '../components/TopSixTable';
 import { useEffect, useRef, useState } from 'react';
+import FixturePc from '../components/FixturePc/FixturePc';
 
 
 const HomePage = ({ fixtures }) => {
@@ -28,6 +29,12 @@ const HomePage = ({ fixtures }) => {
   return (
     <section className='home'>
       <section className='home__main'>
+        <div className='fixturepc__container'>
+          <div className='fixturepc__grouped-list'>
+           <FixturePc
+           fixtures={fixtures} />
+          </div>
+        </div>
         <div className="home__topfive-container">
           <span className='topfive__title'>Últimos partidos</span>
           <div className={`topfive__cards-container ${isScrollable ? 'scrollable' : ''}`} ref={containerRef}>

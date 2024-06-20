@@ -1,0 +1,129 @@
+
+.list__title {
+    background-color: #4E4C70;
+}
+/* This class contents the list of fixtures grouped, */
+.fixture__grouped-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+    background-color: #4E4C70;
+    height: 50em;
+    overflow-y: auto;
+}
+.fixture__grouped-container::-webkit-scrollbar {
+    width: 8px;
+}
+.fixture__grouped-container::-webkit-scrollbar-thumb {
+background-color: #4CAF50; /* Color of the scrollbar thumb */
+border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.fixture__grouped-container::-webkit-scrollbar-track {
+background-color: #2E2C4A; /* Background color of the scrollbar track */
+}
+/*End of the scroll bar logic*/
+
+.fixture__group-date {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 0.2em;
+    background-color: #2E2C4A; 
+}
+.fixture__title h3 {
+    margin: 0;
+    color: #dde0d1; /* Consistent text color */
+    
+  }
+.fixture__match-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5em;
+    padding: 0.5em;
+}
+.single__match-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    min-width: 20em;
+    max-width: 32.8%;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.single__match-card:hover {
+  transform: scale(1.026);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Hover effect */
+}
+
+/*---/// Media queries para to Responsive Match Card ///*/
+@media (max-width: 1630px) {
+  .single__match-card {
+      max-width: 49.5%; 
+  }
+}
+
+@media (max-width: 1097px) {
+  .fixture__match-container {
+    justify-content: center;
+  }
+  .single__match-card {
+      max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .single__match-card {
+      max-width: 100%;
+  }
+}
+/*end of responsive Match card*/
+
+/* PAGINACIÓN  */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8em;
+    background-image: linear-gradient(to right,  #4CAF50, #4E4C70);
+    margin-top: 0.1em;
+  }
+  
+  .pagination-span {
+    margin: 0 1em;
+    font-size: 0.75rem;
+    color: #cdd3b7; /* Color de texto gris */
+  }
+  
+  .btn-prev,
+  .btn-next {
+    padding: 0.4em 0.8em;
+    font-size: 16px;
+    background-color: #c8d9df79; /* Color de fondo azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+  }
+  
+  .btn-prev:disabled,
+  .btn-next:disabled {
+    opacity: 0.5; /* Opacidad reducida para botones deshabilitados */
+    cursor: not-allowed; /* Cursor de no permitido para botones deshabilitados */
+  }
+  
+  .btn-prev:hover,
+  .btn-next:hover,
+  .btn-prev:focus,
+  .btn-next:focus {
+    background-color: #005f78; /* Cambio de color al pasar el mouse o al hacer clic */
+    outline: none; /* Quita el contorno al hacer clic en el botón */
+  }
+  .fixture__match-container {
+    cursor: pointer;
+  }
