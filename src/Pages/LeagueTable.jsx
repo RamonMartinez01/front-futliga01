@@ -1,102 +1,98 @@
+import { useNavigate } from 'react-router-dom';
 import './styles/LeagueTable.css'
+import useFetch from '../hooks/useFetch';
 
 const LeagueTable = ({ fixtures }) => {
 
-    // Función para contar la cantidad de veces que aparece cada equipo
-    const countTeamOccurrencesAndWins = () => {
-     const teamOccurrences = {};
-     const wins = {};
-     //const losses = {}; 
+  const navigate = useNavigate()
 
-     fixtures?.forEach(fixture => {
-      const homeTeamName = fixture?.teams.home.name;
-      const awayTeamName = fixture?.teams.away.name;
-      const homeWinner = fixture?.teams.home.winner;
-      const awayWinner = fixture?.teams.away.winner; 
-
-      // Incrementar la ocurrencia del equipo local
-      teamOccurrences[homeTeamName] = (teamOccurrences[homeTeamName] || 0) + 1;
-      // Incrementar la ocurrencia del equipo visitante
-      teamOccurrences[awayTeamName] = (teamOccurrences[awayTeamName] || 0) + 1;
-    // Incrementar las victorias del equipo local
-    if (homeWinner) {
-      wins[homeTeamName] = (wins[homeTeamName] || 0) + 1;
-  } 
-  // Incrementar las victorias del equipo visitante
-  if (awayWinner) {
-      wins[awayTeamName] = (wins[awayTeamName] || 0) + 1;
+  const { data: generalTable, loading, error } = useFetch(`https://proxy-futliga01.onrender.com/api/general_table`);
+  if (!fixtures) {
+      return <div>Fixture not found</div>;
   }
-});
 
-// Ordenar los equipos por número de victorias (en orden descendente)
-const allTeams = Object.keys(teamOccurrences)
-const sortedTeams = allTeams.sort((a, b) => (wins[b] || 0) - (wins[a] || 0));
-
-return { teamOccurrences, wins, sortedTeams };
-};
-
-// Obtener el objeto con las ocurrencias de los equipos y sus victorias, así como los equipos ordenados
-const { teamOccurrences, wins, sortedTeams } = countTeamOccurrencesAndWins();
-
-// Función para obtener la URL del logotipo de un equipo
-const getTeamLogoUrl = (teamName) => {
-  const fixture = fixtures?.find(
-      (fixture) => fixture.teams.home.name === teamName || fixture.teams.away.name === teamName
-  );
-  if (fixture) {
-      return fixture.teams.home.name === teamName ? fixture.teams.home.logo : fixture.teams.away.logo;
+  if (loading) {
+      return <div>Loading...</div>;
   }
-  return null; // Si no se encuentra el logotipo, retornar null
-};
 
-   
-   return (
-     <div className="table__container">
-      <section>
-       <h2 className="table__tittle">Tabla de la Liga </h2>
-       <hr />
-       <table className="table__section">
-         <thead className="table__header">
-           <tr className="table__tr-header">
-            <div className='header-left'>
-              <th className="th__index"></th>
-              <th className="th__logo">Equipo</th>
-              <th className="th__name"></th>
-            </div>
-            <div className='header-right'>
-              <th className="th__played">J</th>
-              <th className="th__wins">G</th>
-              <th className="th__losses">P</th>
-            </div>
-           </tr>
-         </thead>
-         <tbody className="table__body">
-          {/* Iterar sobre los equipos ordenados y construir las filas de la tabla */}
+  if (error) {
+      return <div>Error: {error.message}</div>;
+  }
 
-                    {sortedTeams.map((team, index) => (
-                        <tr className="table__tr-body" key={team}>
-                          <div className='LEFT'>
-                            <td className="td__index">{(index + 1).toString()}</td>
-                            <td className="td__logo">
-                                {getTeamLogoUrl(team) && (
-                                    <img src={getTeamLogoUrl(team)} alt={`Logotipo ${team}`} style={{ width: 30 }} />
-                                )}
-                            </td>
+  const parsedTable = JSON.parse(generalTable);
 
-                            <td className="td__name">{team}</td>
-                          </div>
-                          <div className='RIGHT'>
-                            <td className="td__played">{teamOccurrences[team]}</td>
-                            <td className="td__wins">{wins[team] || 0}</td>
-                            <td className="td__losses">{teamOccurrences[team] - (wins[team] || 0)}</td>
-                          </div>
+  // Create a map of team names to their logos
+  const teamLogos = {};
+  fixtures.forEach(fixture => {
+      const homeTeam = fixture.teams.home;
+      const awayTeam = fixture.teams.away;
+      if (!teamLogos[homeTeam.name]) {
+          teamLogos[homeTeam.name] = homeTeam.logo;
+      }
+      if (!teamLogos[awayTeam.name]) {
+          teamLogos[awayTeam.name] = awayTeam.logo;
+      }
+  });
+
+  /*const handleTable = () =>{
+      navigate('/table')
+    }*/
+
+      return (
+        <section className="leaguetable__section">
+            <section className="leaguetable__container">
+                <table className="leaguetable__table01">
+                    <thead className="leaguetable__head01"> 
+                        <tr className="leaguetable__tr-head01">
+                            <th></th>
+                            <th>Equipo</th>
                         </tr>
-                    ))}
-         </tbody>
-       </table>
-       </section>
-     </div>
-   );
-   };
+                    </thead>
+                    <tbody className="leaguetable__body01">
+                        {parsedTable.map((team, index) => (
+                            <tr className="leaguetable__tr-body01" key={index}>
+                                <td>
+                                    <img src={teamLogos[team.Equipo]} alt={`${team.Equipo} logo`} />
+                                </td>
+                                <td>{team.Equipo}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+
+                <table className="leaguetable__table">
+                    <thead className="leaguetable__head"> 
+                        <tr className="leaguetable__tr-head">
+                            <th>JJ</th>
+                            <th>JG</th>
+                            <th>JE</th>
+                            <th>JP</th>
+                            <th>Pts</th>
+                            <th>DG</th>
+                            <th>GF</th>
+                            <th>GC</th>
+                        </tr>
+                    </thead>
+                    <tbody className="leaguetable__body">
+                        {parsedTable.map((team, index) => (
+                            <tr className="leaguetable__tr-body" key={index}>
+                                <td>{team.JJ}</td>
+                                <td>{team.JG}</td>
+                                <td>{team.JE}</td>
+                                <td>{team.JP}</td>
+                                <td>{team.Pts}</td>
+                                <td>{team.DG}</td>
+                                <td>{team.GF}</td>
+                                <td>{team.GC}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </section>
+
+          
+        </section>
+    )
+}
    
    export default LeagueTable;
