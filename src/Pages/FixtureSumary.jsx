@@ -27,7 +27,13 @@ const FixtureSummary = ({ fixtures }) => {
         <Link to="/">Home</Link> / <Link to="/list">Partidos</Link> / <span>Resumen del Partido</span>
       </nav>
       <div className="fixture-summary__header">
+        <span className="fixture-summary__logo">
+                <img src={fixture.teams.home.logo} alt="" />
+        </span>
         <h1>{fixture.teams.home.name} vs {fixture.teams.away.name}</h1>
+        <span className="fixture-summary__logo">
+              <img src={fixture.teams.away.logo} alt="" />
+        </span>
       </div>
       <div className="fixture-summary__details">
         <div className="fixture-summary__details-item">
