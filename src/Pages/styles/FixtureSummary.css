@@ -30,7 +30,8 @@
   
   .fixture-summary__header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     background-image: linear-gradient(to right, #4CAF50, #4E4C70);
     padding: 1em;
@@ -38,6 +39,11 @@
     width: 100%;
     text-align: center;
     color: white;
+    gap: 4em;
+  }
+  .fixture-summary__logo img{
+    width: 3.8em; /* Tamaño ajustable según tus necesidades */
+    height: auto;
   }
   
   .fixture-summary__header h1 {
@@ -94,7 +100,13 @@
     .fixture-summary {
       padding: 0.5em;
     }
-  
+    .fixture-summary__header {
+      gap: 1em;
+    }
+    .fixture-summary__logo img{
+      width: 2.8em; /* Tamaño ajustable según tus necesidades */
+      height: auto;
+    }
     .fixture-summary__header h1 {
       font-size: 1.2rem;
     }
