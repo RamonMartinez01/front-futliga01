@@ -155,6 +155,11 @@
         display: none;
     }
     /*-------*/
+    /*  FULL-TABLE */
+    .full-table__container {
+        display: none;
+    }
+    /*-------------------*/
     .home__table {
         display: none;
     }
