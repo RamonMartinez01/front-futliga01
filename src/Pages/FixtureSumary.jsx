@@ -7,7 +7,7 @@ const FixtureSummary = ({ fixtures }) => {
   const fixture = fixtures.find((f) => f.fixture.id === parseInt(id));
 
   const { data: matchNote, loading, error } = useFetch(`https://proxy-futliga01.onrender.com/api/match_note`);
-    console.log(matchNote);
+  
   if (!fixture) {
     return <div>Fixture not found</div>;
   }
