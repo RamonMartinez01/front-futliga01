@@ -155,7 +155,7 @@
 
 @media (max-width: 480px) {
   .leaguetable__container  {
-    width: 98%;
+    width: 90%;
     padding: 0.4em;
     overflow-x: hidden;
   }
