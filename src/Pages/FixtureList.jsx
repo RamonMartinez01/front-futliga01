@@ -86,11 +86,11 @@ const FixtureList = ({ fixtures }) => {
     <section className="fixturelist__body">
       <div className="view-mode-banner">
         <div className="banner-main-buttons">
-          <button onClick={() => handleViewModeChange('all')}>All Fixtures</button>
-          <button onClick={() => handleViewModeChange('byDate')}>By Date</button>
+          <button onClick={() => handleViewModeChange('all')}>Todos</button>
+          <button onClick={() => handleViewModeChange('byDate')}>Por fecha</button>
         </div>
         <div className="banner-navigation">
-          <button className="prev-button" onClick={() => scrollDates(-1)}>atrás</button>
+          <button className="prev-button" onClick={() => scrollDates(-1)}>{"<<"}</button>
             <div className="banner-dates-buttons">
               {dates.map((date, index) => (
                 <button key={index} onClick={() => handleViewModeChange('date', date)}>
@@ -98,7 +98,7 @@ const FixtureList = ({ fixtures }) => {
                 </button>
               ))}
             </div>
-          <button className="next-button" onClick={() => scrollDates(1)}>siguiente</button>
+          <button className="next-button" onClick={() => scrollDates(1)}>{">>"}</button>
         </div>
       </div>
       <div className="fixturelist__container">

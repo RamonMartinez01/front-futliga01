@@ -84,7 +84,7 @@
   width: 100%;
 }
 .prev-button, .next-button {
-  background-color: #c8d9df79;
+  background-color: #2e2c4a;
   color: white;
   border: none;
   border-radius: 5px;
@@ -99,9 +99,11 @@
 
 .prev-button, .next-button {
   width: 5em;
+  height: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 28px;
 }
 
 .fixturelist__container {
@@ -138,7 +140,7 @@
   flex-direction: column;
   width: 95%;
   padding: 0.2em;
-  background-color: #2E2C4A; 
+  background-color: #2e2c4a; 
 }
 
 .fixture__title h3 {
